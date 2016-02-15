@@ -1,5 +1,5 @@
 'use strict';
-angular.module('testApp', ['ui.bootstrap']);
+
 
 /**
  * @ngdoc overview
@@ -21,14 +21,14 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/postaproduct.html',
+        templateUrl: 'views/main.html',
         controller: 'MainCtrl',
         controllerAs: 'Main'
       })
       .when('/metrics', {
-        templateUrl: 'views/metrics.html',
-        controller: 'MetricsCtrl',
-        controllerAs: 'metrics'
+        templateUrl: 'views/about.html',
+        controller: 'aboutCtrl',
+        controllerAs: 'about'
       })
       .otherwise({
         redirectTo: '/'
