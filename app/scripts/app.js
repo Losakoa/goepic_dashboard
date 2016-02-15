@@ -21,9 +21,9 @@ angular
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'Main'
+        templateUrl: 'views/postaproduct.html',
+        controller: 'postaproductController',
+        controllerAs: 'postProduct'
       })
       .when('/metrics', {
         templateUrl: 'views/about.html',
