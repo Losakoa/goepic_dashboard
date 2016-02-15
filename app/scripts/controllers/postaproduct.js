@@ -1,4 +1,4 @@
-'use strict';
+
 
 /**
  * @ngdoc function
@@ -13,34 +13,42 @@
 
 
 
-angular.module('goepicDashboardApp', [])
-	.controller('postaproductController', function($scope) {
-		
+ angular.module('goepicDashboardApp', ['ui.router'])
+ 	.config(function ($stateProvider, $urlRouterProvider) {
+ 		$stateProvider.state('home', {
+	 		url: '/',
+	 		template: '<h1>hello</h1>'
+	 	})
+	 })
+ 	
+ 	.controller('postaproductController', function($scope) {
+
+
 		// this provides the ability to do controllerAs in the html code.  So instead of using $scope.blah we use productList.blah to call stuff
 		var postProduct = this;
 
 		postProduct.titleList = [
-			{
-				productPhotos: 'placehodler for photos',
-				productTitle: 'Snowboard', 
-				productDesc: "This is a test description", 
-				productPrice: 100,
-				productSalePrice: 0,
-				productShippingType: 'Fedex',
-				productSize: 'Large',
-				productInventory: 23
+		{
+			productPhotos: 'placehodler for photos',
+			productTitle: 'Snowboard', 
+			productDesc: "This is a test description", 
+			productPrice: 100,
+			productSalePrice: 0,
+			productShippingType: 'Fedex',
+			productSize: 'Large',
+			productInventory: 23
 
-			},
-			{
-				productPhotos: 'placehodler for photos',
-				productTitle: 'Longboard', 
-				productDesc: "This is a test description for longboard", 
-				productPrice: 200,
-				productSalePrice: 0,
-				productShippingType: 'Fedex',
-				productSize: 'Large',
-				productInventory: 23
-			}
+		},
+		{
+			productPhotos: 'placehodler for photos',
+			productTitle: 'Longboard', 
+			productDesc: "This is a test description for longboard", 
+			productPrice: 200,
+			productSalePrice: 0,
+			productShippingType: 'Fedex',
+			productSize: 'Large',
+			productInventory: 23
+		}
 		];
 		// this function allows you to use the push method to add names to this list
 		postProduct.addProductToInventory = function() {

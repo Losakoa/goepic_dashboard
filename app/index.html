@@ -67,18 +67,22 @@
 
 
 
-      <div class="container" ng-controller='postaproductController as postProduct'>
+      <!-- <div class="container" ng-controller='postaproductController as postProduct'> -->
+      <body>
+        <main ui-view>
+        </main>
+
         <!-- ng-view is a directive that includes the routed html view into this container area-->
-        <div class='postaproduct'>
-          <h2>hello. This is a page to test adding product items.</h2>
+        <!-- <div class='postaproduct'>
+          <h2>hello. This is a page to test adding product items.</h2> -->
 
 
           <!-- This is a search box to search through the list of products-->
-          <input type='text' ng-model='search' placeholder="Seach Products">
+          <!-- <input type='text' ng-model='search' placeholder="Seach Products"> -->
           
 
           <!--adding a form. This will allow you to add data to the array for products-->
-          <form ng-submit="postProduct.addProductToInventory()" class="submit-product-form">
+<!--           <form ng-submit="postProduct.addProductToInventory()" class="submit-product-form">
             <input type="text" placeholder="Add Product Title" ng-model="postProduct.productTitle"> 
             <input type="text" placeholder="Add Product Description" ng-model="postProduct.productDesc">
             <input type="number" placeholder="Add Product Price" ng-model="postProduct.productPrice">
@@ -87,10 +91,10 @@
             <input type="text" placeholder="Add Product Size" ng-model="postProduct.productSize">
             <input type="text" placeholder="Add Product Inventory" ng-model="postProduct.productInventory">
             <input type="submit" value="Add Product">
-          </form>
+          </form> -->
 
 
-
+<!-- 
           <div ng-repeat='title in postProduct.titleList | filter:search' class='ProductList'>
           <h1> Your Product: </h1>
 
@@ -121,7 +125,7 @@
 
           </div>
 
-        </div>
+        </div> -->
 
 
 
@@ -166,17 +170,17 @@
        <script src="bower_components/angular-animate/angular-animate.js"></script>
        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
        <script src="bower_components/angular-resource/angular-resource.js"></script>
-       <script src="bower_components/angular-route/angular-route.js"></script>
+       <!-- <script src="bower_components/angular-route/angular-route.js"></script> -->
        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
        <script src="bower_components/angular-touch/angular-touch.js"></script>
        <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+       <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
        <!-- endbower -->
        <!-- endbuild -->
 
        <!-- build:js({.tmp,app}) scripts/scripts.js -->
        <script src="scripts/app.js"></script>
        <script src="scripts/controllers/postaproduct.js"></script>
-       <script src="scripts/controllers/about.js"></script>
        <!-- endbuild -->
      </body>
      </html>
