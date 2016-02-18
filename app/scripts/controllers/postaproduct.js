@@ -15,12 +15,42 @@
 
  angular.module('goepicDashboardApp', ['ui.router'])
  	.config(function ($stateProvider, $urlRouterProvider) {
- 		$stateProvider.state('home', {
+
+ 		$urlRouterProvider.otherwise('/');
+
+ 		$stateProvider
+ 		.state('home', {
 	 		url: '/',
-	 		template: '<h1>hello</h1>'
+	 		templateUrl:'views/postaproduct.html',
+	 		// use the controller here instead of in our html
+	 		// using ng-controller='blah as blah'
+	 		controller: 'postaproductController as postProduct',
+	 	})
+	 	.state('metrics', {
+	 		url:'/metrics',
+	 		template: '<h1>metrics stuff</h1>'
+	 	})
+	 	.state('inventory', {
+	 		url:'/inventory',
+	 		template: '<h1>Inventory stuff</h1>'
+	 	})
+	 	.state('orders', {
+	 		url:'/orders',
+	 		template: '<h1>Orders stuff</h1>'
+	 	})
+	 	.state('chat', {
+	 		url:'/chat',
+	 		template: '<h1>Chat stuff</h1>'
+	 	})
+	 	.state('resources', {
+	 		url:'/resources',
+	 		template: '<h1>Resources stuff</h1>'
 	 	})
 	 })
  	
+
+
+ 	// This is a controller for the post a product html page
  	.controller('postaproductController', function($scope) {
 
 
