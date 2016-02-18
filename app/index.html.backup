@@ -49,13 +49,12 @@
 
               <ul class="nav navbar-nav">
                 <!-- I've added the goepic tabs from the mock up here -->
-                <li class="active">
-                <a href="#/">Post a Product</a></li>
+                <li class="active"><a href="#/">Post a Product</a></li>
                 <li><a ng-href="#/metrics">Metrics</a></li>
-                <li><a ng-href="#/inventory">Inventory</a></li>
-                <li><a ng-href="#/orders">Orders</a></li>
-                <li><a ng-href="#/chat">Chat</a></li>
-                <li><a ng-href="#/resources">Resources</a></li>
+                <li><a ng-href="#/">Inventory</a></li>
+                <li><a ng-href="#/">Orders</a></li>
+                <li><a ng-href="#/">Chat</a></li>
+                <li><a ng-href="#/">Resources</a></li>
               </ul>
             </div>
           </div>
@@ -68,14 +67,75 @@
 
 
 
+      <!-- <div class="container" ng-controller='postaproductController as postProduct'> -->
       <body>
         <main ui-view>
         </main>
 
+        <!-- ng-view is a directive that includes the routed html view into this container area-->
+        <!-- <div class='postaproduct'>
+          <h2>hello. This is a page to test adding product items.</h2> -->
+
+
+          <!-- This is a search box to search through the list of products-->
+          <!-- <input type='text' ng-model='search' placeholder="Seach Products"> -->
+          
+
+          <!--adding a form. This will allow you to add data to the array for products-->
+<!--           <form ng-submit="postProduct.addProductToInventory()" class="submit-product-form">
+            <input type="text" placeholder="Add Product Title" ng-model="postProduct.productTitle"> 
+            <input type="text" placeholder="Add Product Description" ng-model="postProduct.productDesc">
+            <input type="number" placeholder="Add Product Price" ng-model="postProduct.productPrice">
+            <input type="number" placeholder="Add Product Sale Price" ng-model="postProduct.productSalePrice">
+            <input type="text" placeholder="Add Product Shipping Type" ng-model="postProduct.productShippingType">
+            <input type="text" placeholder="Add Product Size" ng-model="postProduct.productSize">
+            <input type="text" placeholder="Add Product Inventory" ng-model="postProduct.productInventory">
+            <input type="submit" value="Add Product">
+          </form> -->
+
+
+<!-- 
+          <div ng-repeat='title in postProduct.titleList | filter:search' class='ProductList'>
+          <h1> Your Product: </h1>
+
+            <h4>Product Photos: </h4>
+            {{ title.productPhotos }}
+
+            <h4>ProductTitle:</h4>
+            {{ title.productTitle }}
+
+
+            <h4>Product Description:</h4>
+            {{ title.productDesc }}
+
+            <h4>Price: </h4>
+            {{ title.productPrice | currency }}
+
+            <h4>Sale Price: </h4>
+            {{ title.productSalePrice | currency }}
+
+            <h4>Shipping Type: </h4>
+            {{ title.productShippingType}}
+
+            <h4>Product Sizes: </h4>
+            {{ title.productSize}}
+
+            <h4>Product Inventory: </h4>
+            {{ title.productInventory}}
+
+          </div>
+
+        </div> -->
+
+
+
+
+
+
 
         <div class="footer">
           <div class="container">
-            <p><span class="glyphicon glyphicon-heart"></span> GoEpic copyright</p>
+            <p><span class="glyphicon glyphicon-heart"></span> GoEpic copywrite shit</p>
           </div>
         </div>
 
@@ -90,6 +150,14 @@
          ga('create', 'UA-XXXXX-X');
          ga('send', 'pageview');
        </script>
+
+
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-'use strict';
+
 
 /**
  * @ngdoc function
@@ -13,34 +13,72 @@
 
 
 
-angular.module('goepicDashboardApp', [])
-	.controller('postaproductController', function($scope) {
-		
+ angular.module('goepicDashboardApp', ['ui.router'])
+ 	.config(function ($stateProvider, $urlRouterProvider) {
+
+ 		$urlRouterProvider.otherwise('/');
+
+ 		$stateProvider
+ 		.state('home', {
+	 		url: '/',
+	 		templateUrl:'views/postaproduct.html',
+	 		// use the controller here instead of in our html
+	 		// using ng-controller='blah as blah'
+	 		controller: 'postaproductController as postProduct',
+	 	})
+	 	.state('metrics', {
+	 		url:'/metrics',
+	 		template: '<h1>metrics stuff</h1>'
+	 	})
+	 	.state('inventory', {
+	 		url:'/inventory',
+	 		template: '<h1>Inventory stuff</h1>'
+	 	})
+	 	.state('orders', {
+	 		url:'/orders',
+	 		template: '<h1>Orders stuff</h1>'
+	 	})
+	 	.state('chat', {
+	 		url:'/chat',
+	 		template: '<h1>Chat stuff</h1>'
+	 	})
+	 	.state('resources', {
+	 		url:'/resources',
+	 		template: '<h1>Resources stuff</h1>'
+	 	})
+	 })
+ 	
+
+
+ 	// This is a controller for the post a product html page
+ 	.controller('postaproductController', function($scope) {
+
+
 		// this provides the ability to do controllerAs in the html code.  So instead of using $scope.blah we use productList.blah to call stuff
 		var postProduct = this;
 
 		postProduct.titleList = [
-			{
-				productPhotos: 'placehodler for photos',
-				productTitle: 'Snowboard', 
-				productDesc: "This is a test description", 
-				productPrice: 100,
-				productSalePrice: 0,
-				productShippingType: 'Fedex',
-				productSize: 'Large',
-				productInventory: 23
+		{
+			productPhotos: 'placehodler for photos',
+			productTitle: 'Snowboard', 
+			productDesc: "This is a test description", 
+			productPrice: 100,
+			productSalePrice: 0,
+			productShippingType: 'Fedex',
+			productSize: 'Large',
+			productInventory: 23
 
-			},
-			{
-				productPhotos: 'placehodler for photos',
-				productTitle: 'Longboard', 
-				productDesc: "This is a test description for longboard", 
-				productPrice: 200,
-				productSalePrice: 0,
-				productShippingType: 'Fedex',
-				productSize: 'Large',
-				productInventory: 23
-			}
+		},
+		{
+			productPhotos: 'placehodler for photos',
+			productTitle: 'Longboard', 
+			productDesc: "This is a test description for longboard", 
+			productPrice: 200,
+			productSalePrice: 0,
+			productShippingType: 'Fedex',
+			productSize: 'Large',
+			productInventory: 23
+		}
 		];
 		// this function allows you to use the push method to add names to this list
 		postProduct.addProductToInventory = function() {
