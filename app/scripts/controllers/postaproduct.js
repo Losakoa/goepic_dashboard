@@ -12,8 +12,7 @@
 
 
 
-
- angular.module('goepicDashboardApp', ['ui.router'])
+angular.module('goepicDashboardApp', ['ui.router'])
  	.config(function ($stateProvider, $urlRouterProvider) {
 
  		$urlRouterProvider.otherwise('/');
@@ -28,26 +27,26 @@
 	 	})
 	 	.state('metrics', {
 	 		url:'/metrics',
-	 		template: '<h1>metrics stuff</h1>'
+	 		templateUrl:'/views/metrics.html',
 	 	})
 	 	.state('inventory', {
 	 		url:'/inventory',
-	 		template: '<h1>Inventory stuff</h1>'
+	 		templateUrl: 'views/inventory.html'
 	 	})
 	 	.state('orders', {
 	 		url:'/orders',
-	 		template: '<h1>Orders stuff</h1>'
+	 		templateUrl:'views/orders.html'
 	 	})
 	 	.state('chat', {
 	 		url:'/chat',
-	 		template: '<h1>Chat stuff</h1>'
+	 		templateUrl:'views/chat.html'
 	 	})
 	 	.state('resources', {
 	 		url:'/resources',
-	 		template: '<h1>Resources stuff</h1>'
-	 	})
-	 })
- 	
+	 		templateUrl:'views/resources.html'
+	 	});
+	})
+
 
 
  	// This is a controller for the post a product html page
@@ -105,4 +104,10 @@
 		};
 
 
+
+
 	});
+
+
+
+
