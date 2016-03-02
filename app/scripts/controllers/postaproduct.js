@@ -104,14 +104,6 @@ angular.module('goepicDashboardApp', ['ui.router'])
 		};
 
 
-
-	})
-
-	.directive('helloWorld', function(){
-		return {
-
-		}
-
 	});
 
 

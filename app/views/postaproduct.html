@@ -1,59 +1,65 @@
 
 
 <!-- <div class="container" ng-controller='postaproductController as postProduct'>
- -->      <body>
+-->      
+<body>
 
-        <!-- ng-view is a directive that includes the routed html view into this container area-->
-        <div class='postaproduct'>
-          <h2>Hello. This is a page to test adding product items.</h2>
-
-
-          <!-- This is a search box to search through the list of products-->
-          <input type='text' ng-model='search' placeholder="Seach Products">
-          
-
-          <!--adding a form. This will allow you to add data to the array for products-->
-          <form ng-submit="postProduct.addProductToInventory()" class="submit-product-form">
-            <input type="text" placeholder="Add Product Title" ng-model="postProduct.productTitle"> 
-            <input type="text" placeholder="Add Product Description" ng-model="postProduct.productDesc">
-            <input type="number" placeholder="Add Product Price" ng-model="postProduct.productPrice">
-            <input type="number" placeholder="Add Product Sale Price" ng-model="postProduct.productSalePrice">
-            <input type="text" placeholder="Add Product Shipping Type" ng-model="postProduct.productShippingType">
-            <input type="text" placeholder="Add Product Size" ng-model="postProduct.productSize">
-            <input type="text" placeholder="Add Product Inventory" ng-model="postProduct.productInventory">
-            <input type="submit" value="Add Product">
-          </form>
+<!-- ng-view is a directive that includes the routed html view into this container area-->
+<div class='postaproduct'>
+  <h2>Hello. This is a page to test adding product items.</h2>
 
 
+  <!-- This is a search box to search through the list of products-->
+  <input type='text' ng-model='search' placeholder="Seach Products">
 
-          <div ng-repeat='title in postProduct.titleList | filter:search' class='ProductList'>
-          <h1> Your Product: </h1>
-
-            <h4>Product Photos: </h4>
-            {{ title.productPhotos }}
-
-            <h4>ProductTitle:</h4>
-            {{ title.productTitle }}
+  <label>Upload an image for your product:</label>
+  <br/>
+  <input type="file" id="imageLoader" name="imageLoader"/>
+  <canvas id="imageCanvas"></canvas>
 
 
-            <h4>Product Description:</h4>
-            {{ title.productDesc }}
+  <!--adding a form. This will allow you to add data to the array for products-->
+  <form ng-submit="postProduct.addProductToInventory()" class="submit-product-form">
+    <input type="text" placeholder="Add Product Title" ng-model="postProduct.productTitle"> 
+    <input type="text" placeholder="Add Product Description" ng-model="postProduct.productDesc">
+    <input type="number" placeholder="Add Product Price" ng-model="postProduct.productPrice">
+    <input type="number" placeholder="Add Product Sale Price" ng-model="postProduct.productSalePrice">
+    <input type="text" placeholder="Add Product Shipping Type" ng-model="postProduct.productShippingType">
+    <input type="text" placeholder="Add Product Size" ng-model="postProduct.productSize">
+    <input type="text" placeholder="Add Product Inventory" ng-model="postProduct.productInventory">
+    <input type="submit" value="Add Product">
+  </form>
 
-            <h4>Price: </h4>
-            {{ title.productPrice | currency }}
 
-            <h4>Sale Price: </h4>
-            {{ title.productSalePrice | currency }}
 
-            <h4>Shipping Type: </h4>
-            {{ title.productShippingType}}
+  <div ng-repeat='title in postProduct.titleList | filter:search' class='ProductList'>
+    <h1> Your Product: </h1>
 
-            <h4>Product Sizes: </h4>
-            {{ title.productSize}}
+    <h4>Product Photos: </h4>
+    {{ title.productPhotos }}
 
-            <h4>Product Inventory: </h4>
-            {{ title.productInventory}}
+    <h4>ProductTitle:</h4>
+    {{ title.productTitle }}
 
-          </div>
+    <h4>Product Description:</h4>
+    {{ title.productDesc }}
 
-<!--         </div> -->
+    <h4>Price: </h4>
+    {{ title.productPrice | currency }}
+
+    <h4>Sale Price: </h4>
+    {{ title.productSalePrice | currency }}
+
+    <h4>Shipping Type: </h4>
+    {{ title.productShippingType}}
+
+    <h4>Product Sizes: </h4>
+    {{ title.productSize}}
+
+    <h4>Product Inventory: </h4>
+    {{ title.productInventory}}
+
+  </div>
+</div>
+
+<!-- </div> -->
