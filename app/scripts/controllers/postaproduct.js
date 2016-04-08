@@ -28,6 +28,7 @@ angular.module('goepicDashboardApp', ['ui.router'])
 	 	.state('metrics', {
 	 		url:'/metrics',
 	 		templateUrl:'/views/metrics.html',
+	 		controller: 'metricsController as metricsCtrl',
 	 	})
 	 	.state('inventory', {
 	 		url:'/inventory',
